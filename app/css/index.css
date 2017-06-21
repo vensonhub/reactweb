@@ -1,0 +1,21 @@
+.header{
+  width: 100%;
+  height: 2.5em;
+  background-color: #eee;
+  display: flex;
+}
+.left{
+  flex: 1;
+  align-self: center;
+  text-align: center;
+}
+.main{
+  flex: 2;
+  align-self: center;
+  text-align: center;
+}
+.right{
+  flex: 0 1 80px;
+  align-self: center;
+  text-align: center;
+}
