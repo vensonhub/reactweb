@@ -1,4 +1,4 @@
-# reactweb
+# React+React-Router+Antd+Es6+Webpack2+Node+RESTful API
 <pre><code>
 const webpack = require('webpack');
 const path = require('path');
