@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BodyChild from './bodyChild';
+import ReactMixin from 'react-mixin';
+import MixinLog from './Mixins';
 
 const defaultProps = {
   username:'default value'
@@ -14,6 +16,7 @@ class ComponentBodyIndex extends React.Component{
   changeUserInfo(age){
     this.setState({val:age});
     this.refs.one.style.color = 'red';
+    MixinLog.log();
   }
   handleChildValueChange(event){
     this.setState({val:event.target.value})
@@ -35,10 +38,12 @@ class ComponentBodyIndex extends React.Component{
 }
 
 ComponentBodyIndex.propTypes = {
-    userid: PropTypes.string.isRequired
+    userid: PropTypes.number.isRequired
 };
 
 ComponentBodyIndex.defaultProps = defaultProps;
+
+ReactMixin(ComponentBodyIndex.prototype,MixinLog);
 
 
 export default ComponentBodyIndex;

@@ -18,12 +18,6 @@ class Index extends React.Component{
     )
   }
 }
-// Index.propTypes = {
-//   nameProp:React.PropTypes.string
-// };
-// Index.defaultProps = {
-//   name:'react'
-// }
 
 
 ReactDOM.render(<Index/>, document.getElementById('app'));
