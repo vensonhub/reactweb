@@ -5,6 +5,7 @@ import ComponentBodyIndex from './components/bodyIndex';
 import ComponentFooter from './components/footer';
 import '../css/reset.css';
 
+
 class Index extends React.Component{
 
 
