@@ -63,8 +63,8 @@ module.exports = {
     contentBase: PATHS.BUILD,
     host: process.env.HOST,
     port: 8080, //sudo npm run start 如果是80端口需要权限
-    inline: true,//实时刷新
-    hot:true
+    // inline: true,//实时刷新
+    // hot:true
     // progress: true
     // overlay:{
     //   errors:true,
