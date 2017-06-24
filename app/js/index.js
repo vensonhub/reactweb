@@ -1,4 +1,7 @@
-import { createStore } from 'redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import { createStore } from 'redux';
 
 //reducer
 const counter = (count=0,action)=>{
@@ -11,34 +14,27 @@ const counter = (count=0,action)=>{
       return count;
   }
 }
-const initState ={
-  name:"show",
-  city:"beijing"
-}
 
-//reducer initState enhancer
 let store = createStore(counter);
 
-console.log(store);
-console.log(store.getState());
-
-const actionCreator = (info,id)=>{
-  return {
-    type:info,
-    id:id
+class Counter extends React.Component{
+  render(){
+    return (
+      <div>
+        <h1>计数器:{this.props.value}</h1>
+        <button onClick={this.props.onIncrement}>点+1</button>
+        <button onClick={this.props.onDecrement}>点-1</button>
+      </div>
+    )
   }
 }
-store.dispatch(actionCreator("INCREMENT",9));
-store.dispatch({type:"INCREMENT"});
-console.log(store.getState());
 
 const listener = ()=>{
-  document.body.innerText = store.getState();
+  ReactDOM.render(<Counter
+    value={store.getState()}
+    onIncrement={store.dispatch({type:"INCREMENT"})}
+    onDecrement={store.dispatch({type:"DECREMENT"})}
+  />, document.getElementById('app'));
 }
-
-//store 数据监听
+listener();
 store.subscribe(listener);
-
-document.addEventListener('click',function(){
-  store.dispatch({type:"INCREMENT"});
-})
