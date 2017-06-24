@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,hashHistory,Link,IndexRoute,IndexLink,Redirect} from 'react-router';
+import {Router,Route,hashHistory,Link,IndexRoute,IndexLink,Redirect,browserHistory} from 'react-router';
 import Contact from './components/Contact';
 import About from './components/About';
 import Home from './components/Home';
@@ -33,7 +33,7 @@ class Index extends React.Component{
 }
 
 const router = (
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" components={Index}>
       <IndexRoute component={Home}></IndexRoute>
       <Route path="contact" components={Contact}></Route>
