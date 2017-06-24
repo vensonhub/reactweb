@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,hashHistory,Link,IndexRoute,IndexLink} from 'react-router';
+import {Router,Route,hashHistory,Link,IndexRoute,IndexLink,Redirect} from 'react-router';
 import Contact from './components/Contact';
 import About from './components/About';
 import Home from './components/Home';
@@ -23,7 +23,7 @@ class Index extends React.Component{
             <Navlink url="/contact" linkName="联系"></Navlink>
           </li>
           <li>
-            <Navlink url="/about/red/green" linkName="关于我们"></Navlink>
+            <Navlink url="/about" linkName="关于我们"></Navlink>
           </li>
         </ul>
         {this.props.children}
@@ -38,6 +38,7 @@ const router = (
       <IndexRoute component={Home}></IndexRoute>
       <Route path="contact" components={Contact}></Route>
       <Route path="about/:message/:more" components={About}></Route>
+      <Redirect from="about" to="about/react/router"></Redirect>
     </Route>
 
   </Router>
