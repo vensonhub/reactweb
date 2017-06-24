@@ -4,3 +4,7 @@
 .bigFontSize{
   font-size: 28px;
 }
+.active{
+  color: red;
+  font-size: 28px;
+}

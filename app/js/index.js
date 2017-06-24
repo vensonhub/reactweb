@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router,Route,hashHistory,Link} from 'react-router';
 import Contact from './components/Contact';
 import About from './components/About';
+import Navlink from './components/Navlink';
 import '../css/reset.css';
 
 class Index extends React.Component{
@@ -14,13 +15,13 @@ class Index extends React.Component{
         <h1>hello react router</h1>
         <ul>
           <li>
-            <Link to="/">首页</Link>
+            <Navlink url="/" linkName="首页"></Navlink>
           </li>
           <li>
-            <Link to="/contact">联系</Link>
+            <Navlink url="/contact" linkName="联系"></Navlink>
           </li>
           <li>
-            <Link to="/about">关于我们</Link>
+            <Navlink url="/about" linkName="关于我们"></Navlink>
           </li>
         </ul>
         {this.props.children}
@@ -33,7 +34,7 @@ const router = (
   <Router history={hashHistory}>
     <Route path="/" components={Index}>
       <Route path="contact" components={Contact}></Route>
-      <Route path="about" components={About}></Route>
+      <Route path="about/:message/:more" components={About}></Route>
     </Route>
 
   </Router>
