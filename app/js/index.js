@@ -1,10 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-import ComponentHeader from './components/header';
-import ComponentBodyIndex from './components/bodyIndex';
-import ComponentFooter from './components/footer';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Router,Route,hashHistory} from 'react-router';
+import Contact from './components/Contact';
 import '../css/reset.css';
-
 
 class Index extends React.Component{
 
@@ -12,13 +10,17 @@ class Index extends React.Component{
   render(){
     return (
       <div>
-        <ComponentHeader/>
-        <ComponentBodyIndex userid={111} username={"venson"} />
-        <ComponentFooter />
+        Hello React-Router
       </div>
     )
   }
 }
 
+const router = (
+  <Router history={hashHistory}>
+    <Route path="/" components={Index}></Route>
+    <Route path="/contact" components={Contact}></Route>
+  </Router>
+)
 
-ReactDOM.render(<Index/>, document.getElementById('app'));
+ReactDOM.render(router, document.getElementById('app'));
