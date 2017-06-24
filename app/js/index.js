@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,hashHistory,Link,IndexRoute} from 'react-router';
+import {Router,Route,hashHistory,Link,IndexRoute,IndexLink} from 'react-router';
 import Contact from './components/Contact';
 import About from './components/About';
 import Home from './components/Home';
@@ -16,13 +16,14 @@ class Index extends React.Component{
         <h1>hello react router</h1>
         <ul>
           <li>
-            <Navlink url="/" linkName="首页"></Navlink>
+            {/*<Navlink url="/" linkName="首页"></Navlink>*/}
+            <IndexLink to="/" activeStyle={{fontSize:"28px",color:"red"}}>首页</IndexLink>
           </li>
           <li>
             <Navlink url="/contact" linkName="联系"></Navlink>
           </li>
           <li>
-            <Navlink url="/about" linkName="关于我们"></Navlink>
+            <Navlink url="/about/red/green" linkName="关于我们"></Navlink>
           </li>
         </ul>
         {this.props.children}
