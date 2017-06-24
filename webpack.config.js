@@ -16,7 +16,7 @@ var index = {
   entry: [path.join(PATHS.APP, '/js/index.js')],
   tpl: PATHS.APP + '/index.html'
 };
-var vendor = ['react', 'react-dom'];
+var vendor = ['react', 'react-dom','redux'];
 
 plugins.push(
   // new CopyWebpackPlugin([
@@ -29,11 +29,11 @@ plugins.push(
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NamedModulesPlugin(),
   new webpack.NoEmitOnErrorsPlugin(),
-  // new webpack.DefinePlugin({
-  //   'process.env': {
-  //     NODE_ENV: JSON.stringify('production')
-  //   }
-  // }),
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production')
+    }
+  }),
   new ParallelUglifyPlugin({
     uglifyJS:{
       compress:{
@@ -60,6 +60,7 @@ plugins.push(
 
 module.exports = {
   devServer: {
+    historyApiFallback: true,
     contentBase: PATHS.BUILD,
     host: process.env.HOST,
     port: 8080, //sudo npm run start 如果是80端口需要权限
