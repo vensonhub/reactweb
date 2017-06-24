@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider,connect} from 'react-redux';
-import Counter from './components/Counter';
 import store from './redux/store';
 import RootApp from './containers/RootApp';
+import DevTools from './containers/DevTools';
 
 
 
 
 ReactDOM.render(
   <Provider store={store}>
-    <RootApp />
+    <div>
+      <DevTools/>
+      <RootApp />
+    </div>
   </Provider>
   , document.getElementById('app'));

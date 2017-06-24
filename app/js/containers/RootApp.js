@@ -1,6 +1,11 @@
 import React from 'react';
 import {Provider,connect} from 'react-redux';
-import Counter from '../components/Counter';
+import {Router,Route,browserHistory} from 'react-router';
+import {syncHistoryWithStore,routerReducer} from 'react-router-redux';
+import Counter from '../components/Counter/Counter';
+import {Inc,Dec} from '../components/Counter/CounterRedux';
+
+
 
 
 //mapStateToProps mapDispatchToProps
@@ -12,8 +17,8 @@ const mapStateToProps =(state)=>{
 }
 const mapDispatchToProps = (dispatch)=>{
   return {
-    onIncrement:()=>dispatch({type:"INCREMENT"}),
-    onDecrement:()=>dispatch({type:"DECREMENT"})
+    onIncrement:()=>dispatch(Inc()),
+    onDecrement:()=>dispatch(Dec())
   }
 }
 const RootApp = connect(mapStateToProps,mapDispatchToProps)(Counter);
