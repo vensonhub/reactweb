@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,hashHistory,Link} from 'react-router';
+import {Router,Route,hashHistory,Link,IndexRoute} from 'react-router';
 import Contact from './components/Contact';
 import About from './components/About';
+import Home from './components/Home';
 import Navlink from './components/Navlink';
 import '../css/reset.css';
 
@@ -33,6 +34,7 @@ class Index extends React.Component{
 const router = (
   <Router history={hashHistory}>
     <Route path="/" components={Index}>
+      <IndexRoute component={Home}></IndexRoute>
       <Route path="contact" components={Contact}></Route>
       <Route path="about/:message/:more" components={About}></Route>
     </Route>
