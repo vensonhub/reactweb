@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,hashHistory} from 'react-router';
+import {Router,Route,hashHistory,Link} from 'react-router';
 import Contact from './components/Contact';
 import '../css/reset.css';
 
@@ -10,7 +10,15 @@ class Index extends React.Component{
   render(){
     return (
       <div>
-        Hello React-Router
+        <h1>hello react router</h1>
+        <ul>
+          <li>
+            <Link to="/">首页</Link>
+          </li>
+          <li>
+            <Link to="/contact">联系</Link>
+          </li>
+        </ul>
       </div>
     )
   }
