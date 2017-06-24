@@ -22,6 +22,13 @@ let store = createStore(counter);
 console.log(store);
 console.log(store.getState());
 
+const actionCreator = (info,id)=>{
+  return {
+    type:info,
+    id:id
+  }
+}
+store.dispatch(actionCreator("INCREMENT",9));
 store.dispatch({type:"INCREMENT"});
 console.log(store.getState());
 
