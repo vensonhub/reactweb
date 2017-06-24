@@ -16,7 +16,7 @@ var index = {
   entry: [path.join(PATHS.APP, '/js/index.js')],
   tpl: PATHS.APP + '/index.html'
 };
-var vendor = ['react', 'react-dom','redux'];
+var vendor = ['react', 'react-dom','redux','react-redux','react-router'];
 
 plugins.push(
   // new CopyWebpackPlugin([

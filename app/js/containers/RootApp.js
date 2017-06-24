@@ -5,7 +5,7 @@ import Counter from '../components/Counter';
 
 //mapStateToProps mapDispatchToProps
 const mapStateToProps =(state)=>{
-  console.log(state);
+  // console.log(state);
   return {
     value:state
   }
